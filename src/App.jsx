@@ -1,16 +1,17 @@
+import "./App.css";
+import Users from "./components/Users";
 
-import './App.css'
+const usersPromise = fetch("http://localhost:3000/users").then((res) =>
+  res.json()
+);
 
 function App() {
-
-
   return (
     <>
-      
       <h1>Users Management system</h1>
-      
+      <Users usersPromise={usersPromise}></Users>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
